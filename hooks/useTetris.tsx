@@ -26,12 +26,13 @@ interface structuredClone {
   (obj: any): any;
 }
 
-export function useTetris() {
+export function useTetris(gameOverCallback: () => void) {
   const [score, setScore] = useState(0);
   const [upcomingBlocks, setUpcomingBlocks] = useState<Block[]>([]);
   const [isCommitting, setIsCommitting] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [tickSpeed, setTickSpeed] = useState<TickSpeed | null>(null);
+
   //   Scoreboard functions
   function saveScoreToLocalStorage(score: number) {
     localStorage.setItem("tetrisScore", JSON.stringify(score));
@@ -96,9 +97,11 @@ export function useTetris() {
     const newBlock = newUpcomingBlocks.pop() as Block;
     newUpcomingBlocks.unshift(getRandomBlock());
 
+    // Game over logic here
     if (hasCollisions(board, SHAPES[newBlock].shape, 0, 3)) {
       setIsPlaying(false);
       setTickSpeed(null);
+      gameOverCallback(); // Call the gameOverCallback function when the game is over
     } else {
       setTickSpeed(TickSpeed.Normal);
     }
@@ -113,6 +116,7 @@ export function useTetris() {
 
     const newScore = score + getPoints(numCleared);
     setScore(newScore);
+
     // saveScoreToLocalStorage(newScore) only if newScore is greater than the current score from localStorage
     if (newScore > loadScoreFromLocalStorage()) {
       saveScoreToLocalStorage(newScore);
@@ -126,6 +130,7 @@ export function useTetris() {
     droppingShape,
     upcomingBlocks,
     score, // Add 'score' to the dependencies array
+    gameOverCallback,
   ]);
 
   const gameTick = useCallback(() => {
