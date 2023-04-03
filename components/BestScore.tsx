@@ -7,12 +7,12 @@ type Props = {
 };
 
 export default function BestScore({ BestScore }: Props) {
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState("");
 
   useEffect(() => {
     const localScore = localStorage.getItem("tetrisScore");
     setScore(localScore ? JSON.parse(localScore) : 0);
   }, [BestScore]);
 
-  return <div>Best score: {score}</div>;
+  return <div className="text-2xl">Best Score: {score}</div>;
 }
