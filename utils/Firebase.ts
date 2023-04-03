@@ -7,14 +7,18 @@ import { getFirestore } from "firebase/firestore";
 const apiKey = process.env.NEXT_APP_FIREBASE_API_KEY;
 const authDomain = process.env.NEXT_APP_FIREBASE_AUTH_DOMAIN;
 const projectId = process.env.NEXT_APP_FIREBASE_PROJECT_ID;
+const storageBucket = process.env.NEXT_APP_FIREBASE_STORAGE_BUCKET;
+const messagingSenderId = process.env.NEXT_APP_FIREBASE_MESSAGING_SENDER_ID;
+const appId = process.env.NEXT_APP_FIREBASE_APP_ID;
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey,
   authDomain,
   projectId,
-  storageBucket: "tetris-2ebd9.appspot.com",
-  messagingSenderId: "1097388092406",
-  appId: "1:1097388092406:web:6bcb22c6cc6316bd0335d7",
+  storageBucket,
+  messagingSenderId,
+  appId,
 };
 
 // Initialize Firebase
