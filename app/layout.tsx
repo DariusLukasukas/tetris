@@ -13,7 +13,9 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ backgroundColor: "#0a0a0a" }}>
       <body className="bg-neutral-950 font-semibold text-white">
-        {children}
+        <div className="gridx"></div>
+        <div className="lines"></div>
+        <div className="container mx-auto h-screen">{children}</div>
       </body>
     </html>
   );

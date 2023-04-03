@@ -14,5 +14,5 @@ export default function BestScore({ BestScore }: Props) {
     setScore(localScore ? JSON.parse(localScore) : 0);
   }, [BestScore]);
 
-  return <div className="text-2xl">Best Score: {score}</div>;
+  return <div className="text-lg lg:text-xl">Best Score: {score}</div>;
 }

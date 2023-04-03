@@ -7,7 +7,7 @@ interface Props {
 
 function Board({ currentBoard }: Props) {
   return (
-    <div className="select-none rounded-2xl border-4 border-white p-1">
+    <div className="z-50 select-none rounded-2xl border-4 border-white bg-black p-1">
       {currentBoard.map((row, rowIndex) => (
         <div className="row" key={`${rowIndex}`}>
           {row.map((cell, colIndex) => (

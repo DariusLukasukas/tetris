@@ -20,33 +20,28 @@ export default function LeadBoard({ lastUpdated }: LeadBoardProps) {
   }, [lastUpdated]);
 
   return (
-    <div className="flex w-52 flex-col items-center justify-center">
-      <div className="text-2xl">LeadBoard</div>
+    <div className="flex w-52 select-none flex-col items-center justify-center text-lg lg:text-xl">
+      <div>Leadboard</div>
       <div>
         {loading ? (
           <div className="space-y-2">
             <Skeleton
               count={5}
               width={150}
-              height={16}
-              duration={0.5}
-              baseColor="#27272a"
-              highlightColor="#3f3f46"
-              className="animate-pulse"
+              enableAnimation={true}
+              baseColor="#7d41e6"
+              highlightColor="#0b161e"
+              className="easy-in-out"
             />
           </div>
         ) : (
-          <div>
-            <div>
-              <ul>
-                {topScores.map((score, index) => (
-                  <li key={score.id}>
-                    {index + 1}. {score.name} - {score.score}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          <ul>
+            {topScores.map((score, index) => (
+              <li key={score.id}>
+                {index + 1}. {score.name} - {score.score}
+              </li>
+            ))}
+          </ul>
         )}
       </div>
     </div>

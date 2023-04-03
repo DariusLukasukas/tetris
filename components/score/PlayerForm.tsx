@@ -21,8 +21,8 @@ const PlayerForm = ({ lastNickname, onPlayerNameSubmit }: PlayerFormProps) => {
   };
 
   return (
-    <div className="container mx-auto flex justify-center">
-      <form onSubmit={handleSubmit} className="flex max-w-xs flex-col gap-4">
+    <div className="container mx-auto flex justify-center text-lg lg:text-xl">
+      <form onSubmit={handleSubmit} className="flex max-w-xs flex-col gap-6">
         <label htmlFor="player-name">Enter your nickname:</label>
         <input
           type="text"
