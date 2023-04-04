@@ -67,7 +67,6 @@ body {
 
 .cell {
   aspect-ratio: 1;
-  border: 1px solid #0a0a0a;
 }
 
 .cell.hidden {
@@ -81,36 +80,43 @@ body {
 .cell.I {
   background-color: rgb(80, 227, 230);
   box-shadow: 0 0 5px rgb(80, 227, 230), 0 0 15px rgb(80, 227, 230);
+  border: 1px solid black;
 }
 
 .cell.J {
   background-color: rgb(36, 95, 223);
   box-shadow: 0 0 5px rgb(36, 95, 223), 0 0 15px rgb(36, 95, 223);
+  border: 1px solid black;
 }
 
 .cell.L {
   background-color: rgb(223, 173, 36);
   box-shadow: 0 0 5px rgb(223, 173, 36), 0 0 15px rgb(223, 173, 36);
+  border: 1px solid black;
 }
 
 .cell.O {
   background-color: rgb(223, 217, 36);
   box-shadow: 0 0 5px rgb(223, 217, 36), 0 0 15px rgb(223, 217, 36);
+  border: 1px solid black;
 }
 
 .cell.S {
   background-color: rgb(48, 211, 56);
   box-shadow: 0 0 5px rgb(48, 211, 56), 0 0 15px rgb(48, 211, 56);
+  border: 1px solid black;
 }
 
 .cell.T {
   background-color: rgb(132, 61, 198);
   box-shadow: 0 0 5px rgb(132, 61, 198), 0 0 15px rgb(132, 61, 198);
+  border: 1px solid black;
 }
 
 .cell.Z {
   background-color: rgb(227, 78, 78);
   box-shadow: 0 0 5px rgb(227, 78, 78), 0 0 15px rgb(227, 78, 78);
+  border: 1px solid black;
 }
 
 .Ghost,
@@ -122,4 +128,5 @@ body {
 .TGhost,
 .ZGhost {
   background-color: rgba(128, 128, 128, 0.5);
+  border: 1px solid black;
 }
