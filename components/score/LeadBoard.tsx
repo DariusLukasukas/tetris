@@ -26,8 +26,8 @@ export default function LeadBoard({ lastUpdated }: LeadBoardProps) {
         {loading ? (
           <div className="space-y-2">
             <Skeleton
-              count={5}
-              width={150}
+              count={10}
+              width={200}
               enableAnimation={true}
               baseColor="#7d41e6"
               highlightColor="#0b161e"
