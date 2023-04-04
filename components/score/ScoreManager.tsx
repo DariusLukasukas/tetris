@@ -6,7 +6,6 @@ import {
   query,
   orderBy,
   limit,
-  getDocs,
   onSnapshot,
 } from "firebase/firestore";
 import { Score } from "@/types/types";
@@ -40,7 +39,7 @@ export function subscribeToTopScores(
   const topScoresQuery = query(
     scoresCollection,
     orderBy("score", "desc"),
-    limit(5)
+    limit(10)
   );
 
   const unsubscribe = onSnapshot(topScoresQuery, (snapshot) => {
